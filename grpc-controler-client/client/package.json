@@ -1,7 +1,10 @@
 {
   "name": "@gokul-zversal/grpc-client",
-  "files": ["/src/quood_modules/getSnaps.js"],
-  "version": "1.0.0",
+  "files": [
+    "/src/quood_modules/getSnaps.js",
+    "/src/lib/client.js"
+  ],
+  "version": "1.0.1",
   "description": "`gRPC` client is used to fetch the real time Market Data in React Component.",
   "type": "commonjs",
   "main": "main.js",
