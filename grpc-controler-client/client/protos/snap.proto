@@ -1,0 +1,89 @@
+syntax = "proto3";
+package snap;
+
+service SnapService {
+  rpc GetSnapsStream (SnapStreamRequest) returns (stream SnapMessage);
+  rpc GetSnaps (SnapsRequest) returns (SnapResponse);
+}
+
+message SnapStreamRequest {
+   repeated string tickers = 1;
+}
+
+message SnapsRequest {
+   repeated string tickers = 1;
+}
+
+message SnapResponse {
+   repeated SnapMessage data = 1;
+   string error = 2;
+}
+
+message SnapMessage {
+   // (Equities, Options) The ticker symbol.
+   string Ticker = 1;
+   // (Equities, Options) Currency.
+   string Currency = 2;
+   // (Equities) Market identifier code where security is listed.`
+   string ListingMarket = 3;
+   // (Equities, Options) NBBO offer price.
+   string Ask = 4; 
+   // (Equities, Options) Shares available at Ask.
+   string AskSize = 5;
+   // (Equities, Options) Market identifier code where Ask sourced.
+   string AskMarket = 6;
+   // (Equities, Options) NBBO bid price.
+   string Bid = 7;
+   // (Equities, Options) Shares available at Bid.
+   string BidSize = 8;
+   // (Equities, Options) Market identifier code where Bid sourced.
+   string BidMarket = 9;
+   // (Equities, Options) Trade price of first eligible trade of day.
+   string Open = 10;
+   // (Equities, Options) Highest trade price of day.
+   string High = 11;
+   // (Equities, Options) Lowest trade price of the day.
+   string Low = 12;
+   // (Equities, Options) Previous Close price.
+   string PreviousClose = 13;
+   // (Equities, Options) Last price.
+   string Last = 14;
+   // (Equities, Options) Market identifier code where Last sourced.
+   string LastMarket = 15;
+   // (Equities, Options) Shares traded at last price.
+   string LastSize = 16;
+   // (Equities, Options) Timestamp of last trade in EST.
+   string LastTimestamp = 17;
+   // (Equities, Options) Quote Timestamp.
+   string QuoteTimestamp = 18;
+   // (Equities, Options) Number Of Trades.
+   string NumberOfTrades = 19;
+   // (Equities, Options) Total volume traded in the session.
+   string TotalVolume = 20;
+   // (Equities, Options) Total Value traded/Total volume Traded.
+   string VWAP = 21;
+   // (Equities) 52 week high price.
+   string YearHigh = 22;
+   // (Equities) 52 week low price.
+   string YearLow = 23;
+   // (Equities) Conveys the trading status of a Ticker.
+   string TradingStatus = 24;
+   // (Equities, Options) Price information is 15 minutes delayed when true.
+   string IsDelayed = 25;
+   // (Equities, Options) Details of the error.
+   string Error = 26;
+   // (Equities, Options) Difference between Last and PreviousClose.
+   string Change = 27;
+   // (Equities, Options) % Difference between Last and PreviousClose.
+   string ChangePct = 28;
+   // (Equities) Feed.
+   string Feed = 29;
+   // (Options) Underlying Ticker of the option contract.
+   string UnderlyingTicker = 50;
+   // (Options) The type of the option contract.
+   string OptionType = 51;
+   // (Options) The expiration date of the option contract.
+   string ExpirationDate = 52;
+   // (Options) Strike price of the option contract.
+   string StrikePrice = 53;
+}
