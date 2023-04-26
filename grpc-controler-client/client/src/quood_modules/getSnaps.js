@@ -1,9 +1,9 @@
 const { client } = require("../lib/client.js");
-// const authMiddleware = require("../utils/commonMethod.js");
+const authMiddleware = require("../utils/commonMethod.js");
 const { METADATA_TICKERS_ERROR, GET_SNAP_ERROR } = require("../utils/errorConstant.js");
 
-// const tickers = ["AMZN", "GOOG"];
-// const metaData = authMiddleware();
+const tickers = ["AMZN", "GOOG"];
+const metaData = authMiddleware();
 
 function getSnap({ tickers, metaData }, callback) {
   try {
@@ -26,13 +26,13 @@ module.exports = {
 };
 
 
-// getSnap({tickers,metaData},(error,data) => {
-//   if(error){
-//     console.log(error);
-//     return;
-//   }
-//   console.log("Data:",data);
-// })
+getSnap({tickers,metaData},(error,data) => {
+  if(error){
+    console.log(error);
+    return;
+  }
+  console.log("Data:",data);
+})
 
 module.exports = {
   getSnap

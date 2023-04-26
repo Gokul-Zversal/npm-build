@@ -6,7 +6,7 @@
     "/src/utils/errorConstant.js",
     "/protos/snap.proto"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "`gRPC` client is used to fetch the real time Market Data in React Component.",
   "type": "commonjs",
   "main": "main.js",
