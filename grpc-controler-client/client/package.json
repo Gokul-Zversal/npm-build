@@ -7,7 +7,7 @@
     "/protos/snap.proto",
     "/src/utils/commonMethod.js"
   ],
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "`gRPC` client is used to fetch the real time Market Data in React Component.",
   "type": "commonjs",
   "main": "main.js",
